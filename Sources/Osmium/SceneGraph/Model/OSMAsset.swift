@@ -42,9 +42,7 @@ public class OSMAsset {
 
         while queue.count > 0 {
             let element = queue.removeFirst()
-            guard let childComponents = element.0.componentConforming(to: MDLObjectContainerComponent.self) as? MDLObjectContainerComponent else {
-                continue
-            }
+            let childComponents = element.0.children
             let children = childComponents.objects.map { ($0, OSMNode(withMDLObject: $0, device: device)) }
             element.1.add(children: children.map { $0.1 })
 
