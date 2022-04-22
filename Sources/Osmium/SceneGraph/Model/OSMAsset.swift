@@ -43,6 +43,8 @@ public class OSMAsset {
         while queue.count > 0 {
             let element = queue.removeFirst()
             let childComponents = element.0.children
+            /// Explicit check for objects count to avoid crash
+            guard childComponents.count > 0 else { continue }
             let children = childComponents.objects.map { ($0, OSMNode(withMDLObject: $0, device: device)) }
             element.1.add(children: children.map { $0.1 })
 
