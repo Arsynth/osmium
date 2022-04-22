@@ -95,11 +95,6 @@ public class OSMNode {
             mesh = nil
         }
         transform = mdlObject.transform?.matrix ?? .identity()
-
-        for mdlObject in mdlObject.children.objects {
-            let child = OSMNode(withMDLObject: mdlObject, device: device)
-            add(childNode: child)
-        }
     }
 
     public init(withMesh mesh: OSMMesh? = nil) {

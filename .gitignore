@@ -1,0 +1,6 @@
+/.build/
+.idea/misc.xml
+.idea/modules.xml
+.idea/osmium.iml
+.idea/vcs.xml
+.idea/workspace.xml
